@@ -561,7 +561,7 @@ class TestSubPortIntf(object):
 
         # Verify physical port host interface vlan tag attribute
         fv_dict = {
-            "SAI_HOSTIF_ATTR_VLAN_TAG": "SAI_HOSTIF_VLAN_TAG_KEEP",
+            "SAI_HOSTIF_ATTR_VLAN_TAG": "SAI_HOSTIF_VLAN_TAG_ORIGINAL",
         }
         for phy_port in phy_ports:
             hostif_oid = dvs.asicdb.hostifnamemap[phy_port]
@@ -655,7 +655,7 @@ class TestSubPortIntf(object):
 
         # Verify physical port host interface vlan tag attribute
         fv_dict = {
-            "SAI_HOSTIF_ATTR_VLAN_TAG": "SAI_HOSTIF_VLAN_TAG_KEEP",
+            "SAI_HOSTIF_ATTR_VLAN_TAG": "SAI_HOSTIF_VLAN_TAG_ORIGINAL",
         }
         for phy_port in phy_ports:
             hostif_oid = dvs.asicdb.hostifnamemap[phy_port]

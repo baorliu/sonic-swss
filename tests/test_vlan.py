@@ -57,7 +57,7 @@ class TestVlan(object):
         # Verify the host interface configuration
         member_iface = self.dvs_vlan.asic_db.get_entry("ASIC_STATE:SAI_OBJECT_TYPE_HOSTIF",
                                               dvs.asic_db.hostif_name_map[interface])
-        assert member_iface.get("SAI_HOSTIF_ATTR_VLAN_TAG") == "SAI_HOSTIF_VLAN_TAG_KEEP"
+        assert member_iface.get("SAI_HOSTIF_ATTR_VLAN_TAG") == "SAI_HOSTIF_VLAN_TAG_ORIGINAL"
 
         self.dvs_vlan.remove_vlan_member(vlan, interface)
         self.dvs_vlan.get_and_verify_vlan_member_ids(0)

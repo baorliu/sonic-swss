@@ -1764,10 +1764,10 @@ bool PortsOrch::addSubPort(Port &port, const string &alias, const string &vlan, 
     // Change hostif vlan tag for the parent port only when a first subport is created
     if (parentPort.m_child_ports.empty())
     {
-        if (!setHostIntfsStripTag(parentPort, SAI_HOSTIF_VLAN_TAG_KEEP))
+        if (!setHostIntfsStripTag(parentPort, SAI_HOSTIF_VLAN_TAG_ORIGINAL))
         {
             SWSS_LOG_ERROR("Failed to set %s for hostif of port %s",
-                    hostif_vlan_tag[SAI_HOSTIF_VLAN_TAG_KEEP], parentPort.m_alias.c_str());
+                    hostif_vlan_tag[SAI_HOSTIF_VLAN_TAG_ORIGINAL], parentPort.m_alias.c_str());
             return false;
         }
     }
@@ -6510,10 +6510,10 @@ bool PortsOrch::addBridgePort(Port &port)
         }
     }
 
-    if (!setHostIntfsStripTag(port, SAI_HOSTIF_VLAN_TAG_KEEP))
+    if (!setHostIntfsStripTag(port, SAI_HOSTIF_VLAN_TAG_ORIGINAL))
     {
         SWSS_LOG_ERROR("Failed to set %s for hostif of port %s",
-                hostif_vlan_tag[SAI_HOSTIF_VLAN_TAG_KEEP], port.m_alias.c_str());
+                hostif_vlan_tag[SAI_HOSTIF_VLAN_TAG_ORIGINAL], port.m_alias.c_str());
         return false;
     }
     m_portList[port.m_alias] = port;
@@ -7428,10 +7428,10 @@ bool PortsOrch::addLagMember(Port &lag, Port &port, string member_status)
 
     if ((lag.m_bridge_port_id > 0)||(!lag.m_child_ports.empty()))
     {
-        if (!setHostIntfsStripTag(port, SAI_HOSTIF_VLAN_TAG_KEEP))
+        if (!setHostIntfsStripTag(port, SAI_HOSTIF_VLAN_TAG_ORIGINAL))
         {
             SWSS_LOG_ERROR("Failed to set %s for hostif of port %s which is in LAG %s",
-                    hostif_vlan_tag[SAI_HOSTIF_VLAN_TAG_KEEP], port.m_alias.c_str(), lag.m_alias.c_str());
+                    hostif_vlan_tag[SAI_HOSTIF_VLAN_TAG_ORIGINAL], port.m_alias.c_str(), lag.m_alias.c_str());
             return false;
         }
     }
