@@ -296,8 +296,7 @@ tests_fpmsyncd_LDADD = $(LDADD_GTEST) $(LDADD_SAI) -lnl-genl-3 -lhiredis -lhired
 
 ## bfdsyncd unit tests
 
-tests_bfdsyncd_SOURCES = swss_ut_main.cpp \
-                         bfdsyncd/test_bfdlink.cpp \
+tests_bfdsyncd_SOURCES = bfdsyncd/test_bfdlink.cpp \
                          fake_warmstarthelper.cpp \
                          fake_producerstatetable.cpp \
                          mock_dbconnector.cpp \
