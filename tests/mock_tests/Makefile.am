@@ -309,7 +309,7 @@ tests_bfdsyncd_INCLUDES = $(tests_INCLUDES) -I$(top_srcdir)/tests_bfdsyncd -I$(t
 tests_bfdsyncd_CFLAGS = $(DBGFLAGS) $(AM_CFLAGS) $(CFLAGS_COMMON) $(CFLAGS_GTEST) $(CFLAGS_SAI)
 tests_bfdsyncd_CPPFLAGS = $(DBGFLAGS) $(AM_CFLAGS) $(CFLAGS_COMMON) $(CFLAGS_GTEST) $(CFLAGS_SAI) $(tests_bfdsyncd_INCLUDES)
 tests_bfdsyncd_LDADD = $(LDADD_GTEST) $(LDADD_SAI) -lnl-genl-3 -lhiredis -lhiredis \
-        -lswsscommon -lswsscommon -lgtest -lzmq -lnl-3 -lnl-route-3 -lpthread -lgmock -lboost_program_options
+        -lswsscommon -lswsscommon -lgtest -lgtest_main -lzmq -lnl-3 -lnl-route-3 -lpthread -lgmock -lboost_program_options
 
 ## response publisher unit tests
 
